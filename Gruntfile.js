@@ -81,8 +81,8 @@ module.exports = function(grunt) {
 				},
 				build: {
 					files:  {},
-					src:    'Alert.js',
-					dest:   'Alert.min.js'
+					src:    'SweetAlert.js',
+					dest:   'SweetAlert.min.js'
 				}
 			}/*,
 			karma: {

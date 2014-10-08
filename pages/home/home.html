@@ -1,3 +1,109 @@
+<link rel="stylesheet" type="text/css" href="home.css">
 <div ng-controller='HomeCtrl'>	
-	<!-- TODO: place directive call here -->
+
+<!--
+	<table>
+		<tr>
+			<td>
+				A basic message	
+			</td>
+			<td>
+				<a href ng-click="demo1();">Try me!</a>
+			</td>
+			<td>
+				<pre>
+					SweetAlert.swal("Here's a message")
+				</pre>	
+			</td>
+		</tr>
+	</table>
+-->
+
+
+	<div class="container">
+      <div class="page-header">
+        <h1>ngSweetAlert</h1>
+      </div>
+      <p class="lead"></p>
+      <p>AngularJS wrapper for <a target="_blank" href="http://tristanedwards.me/sweetalert">SweetAlert</a>. Sweet Alert is a beautiful replacement for Javascript's "Alert".</p>
+    </div>
+
+    <div class="container">
+
+    	<div class="row">
+    		<div class="col-md-2">
+    			<h3>Examples</h3>
+    		</div>
+    	</div>
+    	
+    	<hr>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			A basic message	
+    		</div>
+    		<div class="col-md-2">
+    			<a href class="btn btn-primary" ng-click="demo1();">Try me!</a>
+    		</div>
+    		<div class="col-md-6">
+    			<pre>SweetAlert.swal("Here's a message");</pre>	
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			A title with a text under
+    		</div>
+    		<div class="col-md-2">
+    			<a href class="btn btn-primary" ng-click="demo2();">Try me!</a>
+    		</div>
+    		<div class="col-md-6">
+    			<pre>SweetAlert.swal("Here's a message!", "It's pretty, isn't it?");</pre>	
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			A success message!
+    		</div>
+    		<div class="col-md-2">
+    			<a href class="btn btn-primary" ng-click="demo3();">Try me!</a>
+    		</div>
+    		<div class="col-md-6">
+    			<pre>SweetAlert.swal("Good job!", "You clicked the button!", "success");</pre>	
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			A warning message, with a function attached to the "Confirm"-button
+    		</div>
+    		<div class="col-md-2">
+    			<a href class="btn btn-primary" ng-click="demo4();">Try me!</a>
+    		</div>
+    		<div class="col-md-6">
+    			<pre>SweetAlert.swal({<br>&nbsp;&nbsp;&nbsp;title: "Are you sure?",<br>&nbsp;&nbsp;&nbsp;text: "Your will not be able to recover this imaginary file!",<br>&nbsp;&nbsp;&nbsp;type: "warning",<br>&nbsp;&nbsp;&nbsp;showCancelButton: true,<br>&nbsp;&nbsp;&nbsp;confirmButtonColor: "#DD6B55",<br>&nbsp;&nbsp;&nbsp;confirmButtonText: "Yes, delete it!"<br>}, <br>function(){ <br>&nbsp;&nbsp;&nbsp;alert("Booyah!");<br>});</pre>	
+    		</div>
+    	</div>
+
+    	<div class="row">
+    		<div class="col-md-4">
+    			A message with a custom icon
+    		</div>
+    		<div class="col-md-2">
+    			<a href class="btn btn-primary" ng-click="demo5();">Try me!</a>
+    		</div>
+    		<div class="col-md-6">
+    			<pre>SweetAlert.swal({<br>&nbsp;&nbsp;&nbsp;title: "Sweet!",<br>&nbsp;&nbsp;&nbsp;text: "Here's a custom image.",<br>&nbsp;&nbsp;&nbsp;imageUrl: "http:://oitozero.com/avatar/avatar.jpg" });</pre>
+    		</div>
+    	</div>
+
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p class="text-muted">SweetAlert was created by <a target="_blank" href="http://tristanedwards.me/">Tristan Edwards</a>. ngSweetAlert was developed by <a target="_blank" href="https//github.com/oitozero">oitozero</a>.</p>
+      </div>
+    </div>
+
 </div>
