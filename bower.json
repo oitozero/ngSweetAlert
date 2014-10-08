@@ -1,6 +1,7 @@
 {
 	"name": "ngSweetAlert",
 	"version": "1.0.0",
+	"main": "./SweetAlert.js",
 	"authors": [
 		"pedro@oitozero.com"
 	],
@@ -18,7 +19,8 @@
 		"node_modules",
 		"bower_components",
 		"test",
-		"tests"
+		"tests",
+		"CHANGELOG.md"
 	],
 	"dependencies": {
 		"angular":"~1.2.0"
