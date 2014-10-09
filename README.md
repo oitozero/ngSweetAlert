@@ -14,7 +14,6 @@ AngularJS wrapper for [SweetAlert](http://tristanedwards.me/sweetalert). Sweet A
 1. download the files
 	1. Bower
 		1. add `"ngSweetAlert": "latest"` to your `bower.json` file then run `bower install` OR run `bower install ngSweetAlert`
-		2. add `"sweetalert": "latest"` to your `bower.json` file then run `bower install` OR run `bower install sweetalert`
 2. include the files in your app
 	1. `Alert.min.js`
 	2. `sweet-alert.js` OR `sweet-alert.min.js`
