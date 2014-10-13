@@ -1,3 +1,13 @@
+# 1.0.1
+
+## Features
+
+## Bug Fixes
+  - call SweetAlert.swal inside another SweetAlert.swal(
+
+## Breaking Changes
+
+
 # 1.0.0
 
 ## Features

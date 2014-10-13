@@ -8,7 +8,7 @@
 'use strict';
 
 angular.module('oitozero.ngSweetAlert', [])
-.factory('SweetAlert', [ function ( ) {
+.factory('SweetAlert', [ '$timeout', function ( $timeout ) {
 
 	var swal = window.swal;
 
@@ -16,19 +16,30 @@ angular.module('oitozero.ngSweetAlert', [])
 	var self = {
 
 		swal: function ( arg1, arg2, arg3 ) {
-			swal( arg1, arg2, arg3 );
+			console.log('swal');
+			$timeout(function(){
+				swal( arg1, arg2, arg3 );	
+			}, 200);
 		},
 		success: function(title, message) {
-			swal( title, message, 'success' );
+			$timeout(function(){
+				swal( title, message, 'success' );
+			}, 200);
 		},
 		error: function(title, message) {
-			swal( title, message, 'error' );
+			$timeout(function(){
+				swal( title, message, 'error' );
+			}, 200);
 		},
 		warning: function(title, message) {
-			swal( title, message, 'warning' );
+			$timeout(function(){
+				swal( title, message, 'warning' );
+			}, 200);
 		},
 		info: function(title, message) {	
-			swal( title, message, 'info' );
+			$timeout(function(){
+				swal( title, message, 'info' );
+			}, 200);
 		}
 	};
 	
