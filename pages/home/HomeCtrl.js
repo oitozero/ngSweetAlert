@@ -26,7 +26,7 @@ angular.module('myApp').controller('HomeCtrl', ['$scope', 'SweetAlert', function
 			confirmButtonColor: "#DD6B55",   
 			confirmButtonText: "Yes, delete it!" 
 		},  function(){   
-			alert("Booyah!");
+			SweetAlert.swal("Booyah!");
 		});
 	}
 
