@@ -16,7 +16,6 @@ angular.module('oitozero.ngSweetAlert', [])
 	var self = {
 
 		swal: function ( arg1, arg2, arg3 ) {
-			console.log('swal');
 			$timeout(function(){
 				swal( arg1, arg2, arg3 );	
 			}, 200);
