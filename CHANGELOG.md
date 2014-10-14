@@ -1,8 +1,20 @@
+# 1.0.3
+
+## Features
+
+  - update sweetalert 0.2.0
+
+## Bug Fixes
+
+## Breaking Changes
+
+
 # 1.0.2
 
 ## Features
 
 ## Bug Fixes
+
   - remove console.log
 
 ## Breaking Changes
@@ -13,6 +25,7 @@
 ## Features
 
 ## Bug Fixes
+
   - call SweetAlert.swal inside another SweetAlert.swal(
 
 ## Breaking Changes
