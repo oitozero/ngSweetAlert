@@ -19,7 +19,7 @@
     "angular-sanitize": "~1.2.0",
     "angular-route": "~1.2.0",
     "angular-touch": "~1.2.0",
-    "sweetalert": "~0.1.1",
+    "sweetalert": "~0.2.0",
     "bootstrap": "~3.2.0"
   },
   "devDependencies": {}

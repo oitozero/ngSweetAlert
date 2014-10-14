@@ -86,19 +86,21 @@
       return ('-' + parseInt(height / 2 + padding) + 'px');
     },
     fadeIn = function(elem, interval) {
-      interval = interval || 16;
-      elem.style.opacity = 0;
-      elem.style.display = 'block';
-      var last = +new Date();
-      var tick = function() {
-        elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
-        last = +new Date();
+      if(+elem.style.opacity < 1) {
+        interval = interval || 16;
+        elem.style.opacity = 0;
+        elem.style.display = 'block';
+        var last = +new Date();
+        var tick = function() {
+          elem.style.opacity = +elem.style.opacity + (new Date() - last) / 100;
+          last = +new Date();
 
-        if (+elem.style.opacity < 1) {
-          setTimeout(tick, interval);
-        }
-      };
-      tick();
+          if (+elem.style.opacity < 1) {
+            setTimeout(tick, interval);
+          }
+        };
+        tick();
+      }
     },
     fadeOut = function(elem, interval) {
       interval = interval || 16;
@@ -131,11 +133,11 @@
         // Fallback
         var evt = document.createEvent('MouseEvents');
         evt.initEvent('click', false, false);
-        node.dispatchEvent(evt);  
+        node.dispatchEvent(evt);
       } else if( document.createEventObject ) {
-        node.fireEvent('onclick') ;  
+        node.fireEvent('onclick') ;
       } else if (typeof node.onclick === 'function' ) {
-        node.onclick();  
+        node.onclick();
       }
     },
     stopEventPropagation = function(e) {
@@ -192,6 +194,8 @@
       type: null,
       allowOutsideClick: false,
       showCancelButton: false,
+      closeOnConfirm: true,
+      closeOnCancel: true,
       confirmButtonText: 'OK',
       confirmButtonColor: '#AEDEF4',
       cancelButtonText: 'Cancel',
@@ -224,7 +228,9 @@
         params.text               = arguments[0].text || params.text;
         params.type               = arguments[0].type || params.type;
         params.allowOutsideClick  = arguments[0].allowOutsideClick || params.allowOutsideClick;
-        params.showCancelButton   = arguments[0].showCancelButton || params.showCancelButton;
+        params.showCancelButton   = arguments[0].showCancelButton !== undefined ? arguments[0].showCancelButton : params.showCancelButton;
+        params.closeOnConfirm     = arguments[0].closeOnConfirm !== undefined ? arguments[0].closeOnConfirm : params.closeOnConfirm;
+        params.closeOnCancel      = arguments[0].closeOnCancel !== undefined ? arguments[0].closeOnCancel : params.closeOnCancel;
 
         // Show "Confirm" instead of "OK" if cancel button is visible
         params.confirmButtonText  = (params.showCancelButton) ? 'Confirm' : params.confirmButtonText;
@@ -243,8 +249,6 @@
         return false;
 
     }
-
-    //console.log(params.confirmButtonColor);
 
     setParameters(params);
     fixVerticalPosition();
@@ -294,10 +298,30 @@
           }
           break;
         case ("click"):
-          if (targetedConfirm && doneFunctionExists && modalIsVisible) {
-            params.doneFunction();
+          if (targetedConfirm && doneFunctionExists && modalIsVisible) { // Clicked "confirm"
+
+            params.doneFunction(true);
+
+            if (params.closeOnConfirm) {
+              closeModal();
+            }
+          } else if (doneFunctionExists && modalIsVisible) { // Clicked "cancel"
+
+            // Check if callback function expects a parameter (to track cancel actions)
+            var functionAsStr          = String(params.doneFunction).replace(/\s/g, '');
+            var functionHandlesCancel  = functionAsStr.substring(0, 9) === "function(" && functionAsStr.substring(9, 10) !== ")";
+
+            if (functionHandlesCancel) {
+              params.doneFunction(false);
+            }
+
+            if (params.closeOnCancel) {
+              closeModal();
+            }
+          } else {
+            closeModal();
           }
-          closeModal();
+
           break;
       }
     };
@@ -435,7 +459,7 @@
         if (lastFocusedButton !== undefined) {
           lastFocusedButton.focus();
           lastFocusedButton = undefined;
-        }        
+        }
       }, 0);
     };
   };
@@ -562,7 +586,7 @@
   /*
    * Set hover, active and focus-states for buttons (source: http://www.sitepoint.com/javascript-generate-lighter-darker-color)
    */
-   
+
   function colorLuminance(hex, lum) {
     // Validate hex string
     hex = String(hex).replace(/[^0-9a-f]/gi, '');
