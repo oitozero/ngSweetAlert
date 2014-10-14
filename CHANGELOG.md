@@ -1,3 +1,13 @@
+# 1.0.2
+
+## Features
+
+## Bug Fixes
+  - remove console.log
+
+## Breaking Changes
+
+
 # 1.0.1
 
 ## Features
