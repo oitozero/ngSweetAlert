@@ -28,6 +28,11 @@ angular.module('oitozero.ngSweetAlert', [])
 				}
 			}, 200);
 		},
+		adv: function( object ) {
+			$timeout(function() {
+				swal( object );
+			}, 200);
+		},
 		success: function(title, message) {
 			$timeout(function(){
 				swal( title, message, 'success' );
