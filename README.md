@@ -15,7 +15,7 @@ SweetAlert v2 [https://limonte.github.io/sweetalert2/](https://limonte.github.io
 ## Install
 1. download the files
 	1. Bower
-		1. add `"angular-sweetalert-2": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-sweetalert-2`
+		1. add `"angular-sweetalert-2": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-sweetalert2`
 2. include the files in your app
 	1. `SweetAlert.min.js`
 	2. `sweetalert2.min.js`

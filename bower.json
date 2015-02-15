@@ -1,11 +1,11 @@
 {
 	"name": "ngSweetAlert2",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"main": "./SweetAlert.js",
 	"authors": [
 		"williamli@19degrees.io"
 	],
-	"description": "AngularJS wrapper for SweetAlert",
+	"description": "AngularJS wrapper for SweetAlert2",
 	"keywords": [
 		"angular",
 		"AngularJs",
