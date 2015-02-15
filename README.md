@@ -4,6 +4,7 @@ AngularJS wrapper for [SweetAlert](http://tristanedwards.me/sweetalert). Sweet A
 
 ## Demo
 Original ngSweetAlert (using SweetAlert v1) [http://oitozero.github.io/ngSweetAlert/](http://oitozero.github.io/ngSweetAlert/)
+
 SweetAlert v2 [https://limonte.github.io/sweetalert2/](https://limonte.github.io/sweetalert2/)
 
 ## Dependencies
