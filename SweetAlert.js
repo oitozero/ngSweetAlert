@@ -7,7 +7,7 @@
 
 'use strict';
 
-angular.module('oitozero.ngSweetAlert', [])
+angular.module('19degrees.ngSweetAlert2', [])
 .factory('SweetAlert', [ '$timeout', '$window', function ( $timeout, $window ) {
 
 	var swal = $window.swal;
