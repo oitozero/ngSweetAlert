@@ -18,11 +18,24 @@ angular.module('oitozero.ngSweetAlert', [])
 		swal: function ( arg1, arg2, arg3 ) {
 			$timeout(function(){
 				if( typeof(arg2) === 'function' ) {
-					swal( arg1, function(isConfirm){
-						$timeout( function(){
-							arg2(isConfirm);
-						});
-					}, arg3 );
+					var functionAsStr = String(arg2).replace(/\s/g, '');
+					var functionHandlesCancel = functionAsStr.substring(0, 9) === "function(" && functionAsStr.substring(9, 10) !== ")";
+
+					var doneFn;
+					if (functionHandlesCancel) {
+						doneFn = function (isConfirm) {
+							$timeout(function () {
+								arg2(isConfirm);
+							});
+						};
+					} else {
+						doneFn = function () {
+							$timeout(function () {
+								arg2();
+							});
+						};
+					}
+					swal(arg1, doneFn, arg3);
 				} else {
 					swal( arg1, arg2, arg3 );
 				}
