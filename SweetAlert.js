@@ -11,27 +11,28 @@ angular.module('19degrees.ngSweetAlert2', [])
 .factory('SweetAlert', [ '$timeout', '$window', function ( $timeout, $window ) {
 
 	var swal = $window.swal;
+	
+	var self = function ( arg1, arg2, arg3 ) {
+		$timeout(function() {
+			if( typeof(arg2) === 'function' ) {
+				swal(arg1, function(isConfirm) {
+					$timeout( function() {
+						arg2(isConfirm);
+					});
+				}, arg3 );
+			} else {
+				swal( arg1, arg2, arg3 );
+			}
+		});
+	};
 
 	//public methods
-	var self = {
-
-		swal: function ( arg1, arg2, arg3 ) {
-			$timeout(function(){
-				if( typeof(arg2) === 'function' ) {
-					swal( arg1, function(isConfirm){
-						$timeout( function(){
-							arg2(isConfirm);
-						});
-					}, arg3 );
-				} else {
-					swal( arg1, arg2, arg3 );
-				}
-			}, 200);
-		},
+	var props = {
+		swal: swal,
 		adv: function( object ) {
 			$timeout(function() {
 				swal( object );
-			}, 200);
+			});
 		},
 		timed: function( title, message, type, time ) {
 			$timeout(function() {
@@ -41,29 +42,31 @@ angular.module('19degrees.ngSweetAlert2', [])
 					type: type,
 					timer: time
 				} );
-			}, 200);
+			});
 		},
 		success: function(title, message) {
 			$timeout(function(){
 				swal( title, message, 'success' );
-			}, 200);
+			});
 		},
 		error: function(title, message) {
 			$timeout(function(){
 				swal( title, message, 'error' );
-			}, 200);
+			});
 		},
 		warning: function(title, message) {
 			$timeout(function(){
 				swal( title, message, 'warning' );
-			}, 200);
+			});
 		},
 		info: function(title, message) {	
 			$timeout(function(){
 				swal( title, message, 'info' );
-			}, 200);
+			});
 		}
 	};
+	
+	angular.extend(self, props);
 	
 	return self;
 }]);
