@@ -1,6 +1,6 @@
 {
 	"name": "ngSweetAlert2",
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"main": "./SweetAlert.js",
 	"authors": [
 		"williamli@19degrees.io"
