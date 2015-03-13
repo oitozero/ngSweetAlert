@@ -3,7 +3,9 @@
 AngularJS wrapper for [SweetAlert](http://tristanedwards.me/sweetalert). Sweet Alert is a beautiful replacement for Javascript's "Alert".
 
 ## Demo
-[http://oitozero.github.io/ngSweetAlert/](http://oitozero.github.io/ngSweetAlert/)
+Original ngSweetAlert (using SweetAlert v1) [http://oitozero.github.io/ngSweetAlert/](http://oitozero.github.io/ngSweetAlert/)
+
+SweetAlert v2 [https://limonte.github.io/sweetalert2/](https://limonte.github.io/sweetalert2/)
 
 ## Dependencies
 - required:  
@@ -13,12 +15,12 @@ AngularJS wrapper for [SweetAlert](http://tristanedwards.me/sweetalert). Sweet A
 ## Install
 1. download the files
 	1. Bower
-		1. add `"angular-sweetalert": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-sweetalert`
+		1. add `"angular-sweetalert-2": "latest"` to your `bower.json` file then run `bower install` OR run `bower install angular-sweetalert2`
 2. include the files in your app
-	1. `Alert.min.js`
-	2. `sweet-alert.js` OR `sweet-alert.min.js`
-	3. `sweet-alert.css`
-3. include the module in angular (i.e. in `app.js`) - `oitozero.ngSweetAlert`
+	1. `SweetAlert.min.js`
+	2. `sweetalert2.min.js`
+	3. `sweetalert2.css`
+3. include the module in angular (i.e. in `app.js`) - `19degrees.ngSweetAlert2`
 
 
 ## Documentation
