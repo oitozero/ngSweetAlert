@@ -10,3 +10,9 @@ Features:
   - SweetAlert.warning( "title", "message" )
   - SweetAlert.error( "title", "message" )
   - SweetAlert.info( "title", "message" )
+
+## 1.1.0 (March 21, 2015)
+
+Improvements:
+
+ - Replace use of $timeout with $evalAsync

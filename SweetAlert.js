@@ -8,7 +8,7 @@
 'use strict';
 
 angular.module('oitozero.ngSweetAlert', [])
-.factory('SweetAlert', [ '$timeout', function ( $timeout ) {
+.factory('SweetAlert', [ '$rootScope', function ( $rootScope ) {
 
 	var swal = window.swal;
 
@@ -16,37 +16,37 @@ angular.module('oitozero.ngSweetAlert', [])
 	var self = {
 
 		swal: function ( arg1, arg2, arg3 ) {
-			$timeout(function(){
+			$rootScope.$evalAsync(function(){
 				if( typeof(arg2) === 'function' ) {
 					swal( arg1, function(isConfirm){
-						$timeout( function(){
+						$rootScope.$evalAsync( function(){
 							arg2(isConfirm);
 						});
 					}, arg3 );
 				} else {
 					swal( arg1, arg2, arg3 );
 				}
-			}, 200);
+			});
 		},
 		success: function(title, message) {
-			$timeout(function(){
+			$rootScope.$evalAsync(function(){
 				swal( title, message, 'success' );
-			}, 200);
+			});
 		},
 		error: function(title, message) {
-			$timeout(function(){
+			$rootScope.$evalAsync(function(){
 				swal( title, message, 'error' );
-			}, 200);
+			});
 		},
 		warning: function(title, message) {
-			$timeout(function(){
+			$rootScope.$evalAsync(function(){
 				swal( title, message, 'warning' );
-			}, 200);
+			});
 		},
 		info: function(title, message) {	
-			$timeout(function(){
+			$rootScope.$evalAsync(function(){
 				swal( title, message, 'info' );
-			}, 200);
+			});
 		}
 	};
 	
