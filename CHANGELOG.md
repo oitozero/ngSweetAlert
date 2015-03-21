@@ -1,3 +1,13 @@
+## 1.1.0
+
+Improvements:
+
+ - Replace use of $timeout with $evalAsync
+
+
+# 1.0.4
+
+
 # 1.0.3
 
 ## Features
