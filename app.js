@@ -19,8 +19,8 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', function($rou
 	// var staticPath ='/';
 	var staticPath;
 	// staticPath ='/angular-services/ngSweetAlert/';		//local
-	// staticPath ='/';		//nodejs (local)
-	staticPath ='/ngSweetAlert/';		//gh-pages
+	staticPath ='/';		//nodejs (local)
+	// staticPath ='/ngSweetAlert/';		//gh-pages
 	var appPathRoute ='/';
 	var pagesPath =staticPath+'pages/';
 	

@@ -24,8 +24,9 @@ angular.module('myApp').controller('HomeCtrl', ['$scope', 'SweetAlert', function
 			type: "warning",   
 			showCancelButton: true,   
 			confirmButtonColor: "#DD6B55",   
-			confirmButtonText: "Yes, delete it!" 
-		},  function(){   
+			confirmButtonText: "Yes, delete it!",
+			closeOnConfirm: false
+		},  function(){  
 			SweetAlert.swal("Booyah!");
 		});
 	}
