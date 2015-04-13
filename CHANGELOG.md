@@ -1,5 +1,9 @@
 ## 1.1.0
 
+## Features
+
+  - update angular ~1.3.0
+
 Improvements:
 
  - Replace use of $timeout with $evalAsync
