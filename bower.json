@@ -4,7 +4,8 @@
 	"main": "./SweetAlert.js",
 	"author": "pedro@oitozero.com",
 	"contributors": [
-		"gnick666@gmail.com"
+		"gnick666@gmail.com",
+		"thodoris.bais@gmail.com"
 	],
 	"description": "AngularJS wrapper for SweetAlert",
 	"keywords": [
