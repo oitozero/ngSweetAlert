@@ -43,12 +43,22 @@ angular.module('oitozero.ngSweetAlert', [])
 				swal( title, message, 'warning' );
 			});
 		},
-		info: function(title, message) {	
+		info: function(title, message) {
 			$rootScope.$evalAsync(function(){
 				swal( title, message, 'info' );
 			});
+		},
+		showInputError: function(message) {
+			$rootScope.$evalAsync(function(){
+	      swal.showInputError( message );
+	    });
+		},
+		close: function() {
+			$rootScope.$evalAsync(function(){
+	        swal.close();
+	    });
 		}
 	};
-	
+
 	return self;
 }]);
