@@ -7,10 +7,33 @@
 
 'use strict';
 
+
 angular.module('oitozero.ngSweetAlert', [])
-.factory('SweetAlert', [ '$rootScope', function ( $rootScope ) {
+
+// Provider to set default values to SweetAlert
+.provider('SweetAlertConfig', [function(){
+  
+  var defaultSwal = {};
+  
+  return {
+    setDefaults: function(defaults){
+      defaultSwal = defaults;
+    },
+    $get: function(){
+      return{
+        defaultSwal: defaultSwal
+      };
+    }
+  };
+  
+}])
+
+.factory('SweetAlert', [ '$rootScope', 'SweetAlertConfig', function ( $rootScope, SweetAlertConfig ) {
 
 	var swal = window.swal;
+	
+	// Set default values from provider on swal
+	swal.setDefaults(SweetAlertConfig.defaultSwal);
 
 	//public methods
 	var self = {
@@ -43,22 +66,12 @@ angular.module('oitozero.ngSweetAlert', [])
 				swal( title, message, 'warning' );
 			});
 		},
-		info: function(title, message) {
+		info: function(title, message) {	
 			$rootScope.$evalAsync(function(){
 				swal( title, message, 'info' );
 			});
-		},
-		showInputError: function(message) {
-			$rootScope.$evalAsync(function(){
-	      swal.showInputError( message );
-	    });
-		},
-		close: function() {
-			$rootScope.$evalAsync(function(){
-	        swal.close();
-	    });
 		}
 	};
-
+	
 	return self;
 }]);
