@@ -50,13 +50,13 @@ angular.module('oitozero.ngSweetAlert', [])
 		},
 		showInputError: function(message) {
 			$rootScope.$evalAsync(function(){
-	      swal.showInputError( message );
-	    });
+				swal.showInputError( message );
+			});
 		},
 		close: function() {
 			$rootScope.$evalAsync(function(){
-	        swal.close();
-	    });
+				swal.close();
+			});
 		}
 	};
 
