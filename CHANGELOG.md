@@ -1,3 +1,10 @@
+## 1.1.1
+
+## Features
+
+  - expose showInputError and close methods from swal object
+
+
 ## 1.1.0
 
 ## Features
