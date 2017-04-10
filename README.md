@@ -24,4 +24,4 @@ AngularJS wrapper for [SweetAlert](http://tristanedwards.me/sweetalert). Sweet A
 ## Documentation
 
 - [http://oitozero.github.io/ngSweetAlert/](http://oitozero.github.io/ngSweetAlert/)
-- [http://tristanedwards.me/sweetalert](http://tristanedwards.me/sweetalert)
+- [http://t4t5.github.io/sweetalert/](http://t4t5.github.io/sweetalert/)
