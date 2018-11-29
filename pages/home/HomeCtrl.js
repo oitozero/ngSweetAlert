@@ -55,7 +55,7 @@ angular.module('myApp').controller('HomeCtrl', ['$scope', 'SweetAlert', function
 		SweetAlert.swal({   
 			title: "Sweet!",   
 			text: "Here's a custom image.",   
-			imageUrl: "http://oitozero.com/img/avatar.jpg" 
+			imageUrl: "https://avatars0.githubusercontent.com/u/4194490?s=400&v=4" 
 		});
 	}
 
