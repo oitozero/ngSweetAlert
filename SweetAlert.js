@@ -28,7 +28,7 @@
                 swal: function (arg1, arg2, arg3) {
 
                     //merge with default config
-                    var arg1 = angular.extend(SweetAlertConfig, arg1);
+                    arg1 = angular.extend(angular.copy(SweetAlertConfig), arg1);
 
                     $rootScope.$evalAsync(function () {
                         if (typeof(arg2) === 'function') {
